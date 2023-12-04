@@ -1,21 +1,23 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  // Enable the ESlint flat config support
+  "cSpell.words": [
+  ],
+
+  // Enable the flat config support
   "eslint.experimental.useFlatConfig": true,
 
-  // Disable the default formatter, use eslint instead
+  // Disable the default formatter
   "prettier.enable": false,
   "editor.formatOnSave": false,
 
   // Auto fix
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "explicit",
     "source.organizeImports": "never"
   },
 
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "warn" },
+    { "rule": "@stylistic/*", "severity": "warn" },
     { "rule": "*-indent", "severity": "warn" },
     { "rule": "*-spacing", "severity": "warn" },
     { "rule": "*-spaces", "severity": "warn" },
@@ -26,7 +28,6 @@
     { "rule": "*semi", "severity": "warn" }
   ],
 
-  // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
     "javascriptreact",

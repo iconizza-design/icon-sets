@@ -41,14 +41,15 @@
     "readme.md"
   ],
   "scripts": {
-    "build": "rimraf dist && unbuild",
+    "build": "rm -rf dist && unbuild",
     "test:cjs": "vitest --config vitest.config.cjs",
     "test:esm": "vitest --config vitest.config.mjs",
-    "test": "npm run test:cjs && npm run test:esm",
-    "version": "node sync-version.cjs",
+    "test": "nyxr test:cjs && nyxr test:esm",
+    "version": "zx scripts/sync-version.mjs",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepublishOnly": "npm run build && npm run version"
+    "prepublishOnly": "nyxr build && nyxr version",
+    "release": "bumping && pnpm publish"
   },
   "dependencies": {
     "@iconizza/types": "*",
@@ -56,12 +57,15 @@
   },
   "devDependencies": {
     "@nyxb/eslint-config": "^2.0.0",
+    "@nyxb/nyxi": "^0.0.31",
     "@types/jest": "^29.5.2",
     "@types/node": "^18.16.16",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "bumping": "^9.2.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.41.0",
     "unbuild": "^1.2.1",
-    "vitest": "^0.31.3"
+    "vitest": "^0.31.3",
+    "zx": "^7.2.3"
   }
 }
