@@ -1,64 +1,67 @@
 {
-	"name": "@iconizza/json",
-	"description": "Hundreds of open source icon sets in IconizzaJSON format",
-	"license": "MIT",
-	"version": "0.0.0",
-	"type": "module",
-	"homepage": "https://iconizza.design/icon-sets/",
-	"bugs": "https://github.com/iconizza/icon-sets/issues",
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com/iconizza/icon-sets.git"
-	},
-	"exports": {
-		"./*": "./*",
-		"./dist": {
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
-		},
-		"./dist/index": {
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
-		},
-		".": {
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
-		}
-	},
-	"files": [
-		"dist",
-		"json",
-		"lib",
-		"collections.json",
-		"collections.md",
-		"composer.json",
-		"readme.md"
-	],
-	"main": "dist/index.cjs",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
-	"scripts": {
-		"build": "rimraf dist && unbuild",
-		"test:cjs": "vitest --config vitest.config.cjs",
-		"test:esm": "vitest --config vitest.config.mjs",
-		"test": "npm run test:cjs && npm run test:esm",
-		"version": "node sync-version.cjs",
-		"prepublishOnly": "npm run build && npm run version"
-	},
-	"dependencies": {
-		"@iconizza/types": "*",
-		"pathe": "^1.1.0"
-	},
-	"devDependencies": {
-		"@types/jest": "^29.5.2",
-		"@types/node": "^18.16.16",
-		"@typescript-eslint/eslint-plugin": "^5.59.8",
-		"cross-env": "^7.0.3",
-		"eslint": "^8.41.0",
-		"unbuild": "^1.2.1",
-		"vitest": "^0.31.3"
-	}
+  "name": "@iconizza/json",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Hundreds of open source icon sets in IconizzaJSON format",
+  "license": "MIT",
+  "homepage": "https://iconizza.design/icon-sets/",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/iconizza/icon-sets.git"
+  },
+  "bugs": "https://github.com/iconizza/icon-sets/issues",
+  "exports": {
+    "./*": "./*",
+    "./dist": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/index": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "collections.json",
+    "collections.md",
+    "composer.json",
+    "dist",
+    "json",
+    "lib",
+    "readme.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "test:cjs": "vitest --config vitest.config.cjs",
+    "test:esm": "vitest --config vitest.config.mjs",
+    "test": "npm run test:cjs && npm run test:esm",
+    "version": "node sync-version.cjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepublishOnly": "npm run build && npm run version"
+  },
+  "dependencies": {
+    "@iconizza/types": "*",
+    "pathe": "^1.1.0"
+  },
+  "devDependencies": {
+    "@nyxb/eslint-config": "^2.0.0",
+    "@types/jest": "^29.5.2",
+    "@types/node": "^18.16.16",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.41.0",
+    "unbuild": "^1.2.1",
+    "vitest": "^0.31.3"
+  }
 }
