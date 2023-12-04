@@ -1,0 +1,13 @@
+{
+	"name": "iconizza/json",
+	"description": "Iconizza icons collection in JSON format",
+	"type": "library",
+	"version": "2.2.152",
+	"license": "MIT",
+	"homepage": "https://iconizza.design/icon-sets/",
+	"autoload": {
+		"psr-4": {
+			"Iconizza\\IconsJSON\\": "lib"
+		}
+	}
+}
