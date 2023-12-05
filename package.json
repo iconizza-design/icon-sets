@@ -1,7 +1,7 @@
 {
   "name": "@iconizza/json",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hundreds of open source icon sets in IconizzaJSON format",
   "license": "MIT",
   "homepage": "https://iconizza.design/icon-sets/",
