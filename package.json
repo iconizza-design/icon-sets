@@ -49,7 +49,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepublishOnly": "nyxr build && nyxr version",
-    "release": "bumping && pnpm publish"
+    "release": "bumping && pnpm publish --no-git-checks"
   },
   "dependencies": {
     "@iconizza/types": "*",
